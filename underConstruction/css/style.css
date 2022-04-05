@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container img {
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  max-width: 240px;
+}
+
+.container h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 3em;
+}
+
+.container p {
+  margin-top: .5em;
+  font-size: 1em;
+}
+
+.container .social-links {
+  margin-top: 5em;
+}
+/*# sourceMappingURL=style.css.map */

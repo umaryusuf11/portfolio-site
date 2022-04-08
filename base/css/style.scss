@@ -1,61 +1,327 @@
-$primary1: #001D45;
-$primary2: #005CD8;
-$grey1: #ADADAD;
-$danger: #E85555;
-$success: #5CB85C;
-$warning: #F0AD4E;
+$primary1: #001d45;
+$primary2: #005cd8;
+$grey1: #919191;
+$danger: #e85555;
+$success: #5cb85c;
+$warning: #f0ad4e;
 
-*, body, html{
-    margin: 0;
-    padding: 0;
-    font-family: "BR Firma";
-    box-sizing: border-box;
-    transition: 0.5s;
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "BR Firma", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
 }
 
-h1{
-    font-size: 2em;
-    font-weight: bold;
-    color: $primary1;
+body,
+html {
+  overflow-x: hidden;
 }
 
-p{
-    font-size: 1em;
-    font-weight: normal;
-    color: $grey1;
+section {
+  padding: 25vw 4vw;
 }
 
-.social-links{
+h1 {
+  font-size: 8vw;
+  font-weight: bold;
+  color: $primary1;
+}
+
+p {
+  font-size: 3.5vw;
+  color: $grey1;
+}
+
+a {
+  font-size: 3.5vw;
+  text-decoration: none;
+  color: $primary2;
+}
+
+button {
+  transition: 0.3s;
+  padding: 4vw 8vw;
+  font-size: 3.5vw;
+  border: solid 0px;
+  background-color: $primary2;
+  color: white;
+  border-radius: 5px;
+  box-shadow: $primary2 0px 0.5vw 1.5vw;
+
+  &:hover {
+    box-shadow: $primary2 0px 0.4vw 1.4vw;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: darken($color: $primary2, $amount: 0.5);
+    box-shadow: $primary2 0px 0vw 0.1vw;
+  }
+}
+
+.logo {
+  font-size: 5vw;
+  font-weight: 600;
+  color: $primary1;
+}
+
+.icon {
+  width: 5vw;
+  height: 5vw;
+}
+
+.social-links {
+  width: fit-content;
+  display: flex;
+  gap: 4vw;
+
+  .social-link {
     display: flex;
     justify-content: center;
-    gap: 2em;
+    align-items: center;
+    background-color: $primary1;
+    color: white;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
 
-    .social-link{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $primary1;
-        color: white;
-        width: 2em;
-        height: 2em;
-        font-size: 1.5em;
-        line-height: 100%;
-        border-radius: 50%;
-
-        &.twitter{
-            background-color: #1DA1F2;
-        }
-
-        &.github{
-            background-color: #333;
-        }
-
-        &.linkedin{
-            background-color: #0077B5;
-        }
-
-        &:hover{
-            filter: contrast(0.7);
-        }
+    .icon {
+      width: 50%;
+      height: 50%;
     }
+
+    &.twitter {
+      background-color: #1da1f2;
+    }
+
+    &.github {
+      background-color: #333;
+    }
+
+    &.linkedin {
+      background-color: #0077b5;
+    }
+
+    &:hover {
+      filter: contrast(0.7);
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+
+.input-container {
+  width: 100%;
+  font-size: 3.5vw;
+  transition: 0.2s;
+  position: relative;
+
+  input {
+    width: 100%;
+    font-size: inherit;
+    padding: 3vw 5vw;
+    border: solid 1px $grey1;
+    border-radius: 5px;
+    background-color: white;
+    color: $primary1;
+    font-size: 3.5vw;
+    transition: inherit;
+  }
+
+  label {
+    pointer-events: none;
+    width: fit-content;
+    position: absolute;
+    top: 4vw;
+    left: 5vw;
+    font-size: inherit;
+    color: $grey1;
+    transition: inherit;
+
+    .text {
+      background-color: white;
+      font-size: inherit;
+      color: inherit;
+      width: inherit;
+    }
+  }
+
+  .error {
+    display: none;
+    margin: 1vw 0;
+    font-size: 3vw;
+    color: $danger;
+    align-items: center;
+    gap: 1vw;
+    .icon {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+
+  &:focus-within {
+    input {
+      outline: none;
+      border-color: $primary2;
+    }
+    label {
+      color: $primary2;
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+  }
+
+  &.filled {
+    input {
+      outline: none;
+    }
+    label {
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+  }
+
+  &.error {
+    input {
+      border-color: $danger;
+    }
+    label {
+      color: $danger;
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+
+    .error {
+      display: flex;
+    }
+  }
+}
+
+.textarea-container {
+  width: 100%;
+  font-size: 3.5vw;
+  transition: 0.2s;
+  position: relative;
+
+  textarea {
+    width: 100%;
+    font-size: inherit;
+    padding: 3vw 5vw;
+    border: solid 1px $grey1;
+    border-radius: 5px;
+    background-color: white;
+    color: $primary1;
+    font-size: 3.5vw;
+    transition: inherit;
+  }
+
+  label {
+    pointer-events: none;
+    width: fit-content;
+    position: absolute;
+    top: 4vw;
+    left: 5vw;
+    font-size: inherit;
+    color: $grey1;
+    transition: inherit;
+
+    .text {
+      background-color: white;
+      font-size: inherit;
+      color: inherit;
+      width: inherit;
+    }
+  }
+
+  .error {
+    display: none;
+    margin: 1vw 0;
+    font-size: 3vw;
+    color: $danger;
+    align-items: center;
+    gap: 1vw;
+    .icon {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+
+  &:focus-within {
+    textarea {
+      outline: none;
+      border-color: $primary2;
+    }
+    label {
+      color: $primary2;
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+  }
+
+  &.filled {
+    textarea {
+      outline: none;
+    }
+    label {
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+  }
+
+  &.error {
+    textarea {
+      border-color: $danger;
+    }
+    label {
+      color: $danger;
+      font-size: 2.5vw;
+
+      .text {
+        transform: translateY(-5.5vw);
+      }
+    }
+
+    .error {
+      display: flex;
+    }
+  }
+}
+
+.submit-container {
+  button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .text {
+      flex: 8;
+    }
+
+    .icon {
+      flex: 1;
+    }
+  }
 }

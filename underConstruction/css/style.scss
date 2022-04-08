@@ -1,37 +1,69 @@
-$primary1: #001D45;
-$primary2: #005CD8;
-$grey1: #ADADAD;
-$danger: #E85555;
-$success: #5CB85C;
-$warning: #F0AD4E;
+$primary1: #001d45;
+$primary2: #005cd8;
+$grey1: #919191;
+$danger: #e85555;
+$success: #5cb85c;
+$warning: #f0ad4e;
 
+.container {
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.container{
-    height: 100vh;
-    margin: auto;
-    text-align: center;
+  img {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    max-width: 240px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 3em;
+  }
+  p {
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  .social-links {
+    margin: 0 auto;
+    margin-top: 5em;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    
-    img{
-        margin: 0 auto;
-        width: 50%;
-        height: auto;
-        max-width: 240px;
-    }
+    gap: 2em;
 
-    h1{
-        font-size: 1.5em;
-        font-weight: bold;
-        margin-top: 3em;
-    }
-    p{
-        margin-top: .5em;
-        font-size: 1em;
-    }
+    .social-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary1;
+      color: white;
+      width: 2em;
+      height: 2em;
+      font-size: 1.5em;
+      line-height: 100%;
+      border-radius: 50%;
 
-    .social-links{
-        margin-top: 5em;
+      &.twitter {
+        background-color: #1da1f2;
+      }
+
+      &.github {
+        background-color: #333;
+      }
+
+      &.linkedin {
+        background-color: #0077b5;
+      }
+
+      &:hover {
+        filter: contrast(0.7);
+      }
     }
+  }
 }

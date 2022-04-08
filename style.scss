@@ -288,6 +288,7 @@ $github: #171515;
 
         .link {
           margin-top: 3vw;
+          display: none;
           a {
             display: flex;
             align-items: center;
@@ -552,7 +553,6 @@ $github: #171515;
           
           .link{
             margin-top: 1.5vw;
-            display: none;
           }
 
         }

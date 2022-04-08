@@ -339,6 +339,7 @@
 
 #work .project-list .card .header .link {
   margin-top: 3vw;
+  display: none;
 }
 
 #work .project-list .card .header .link a {
@@ -621,7 +622,6 @@
   }
   #work .project-list .card .header .link {
     margin-top: 1.5vw;
-    display: none;
   }
   #work .project-list .card .img-container img {
     -webkit-transform: translateX(-4vw) translateY(3vw);

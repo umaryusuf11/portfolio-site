@@ -172,6 +172,7 @@ class InputManager {
 
   clearValue() {
     this.setValue("");
+    this.getElement().parent().removeClass("filled");
   }
 
   _returnTrue() {
@@ -222,8 +223,6 @@ class FormManager {
     try {
       let response = await $.ajax({
         url: this.action,
-        crossDomain: true,
-        headers: { "Access-Control-Allow-Origin": "*" },
         method: this.method,
         data: values,
         dataType: "json",
@@ -247,7 +246,6 @@ class FormManager {
     this.inputs.forEach((input) => {
       values[input.name] = input.getValue();
     });
-    console.log(values);
     return values;
   }
 

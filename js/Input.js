@@ -68,6 +68,7 @@ class InputManager {
 
   clearValue() {
     this.setValue("");
+    $(this).parent().removeClass("filled");
   }
 
   _returnTrue() {

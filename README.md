@@ -12,8 +12,8 @@
 ~~-o optimise for desktop~~ <br />
 
 ## phase three
--o connect to backend <br />
--o publish <br />
+~~-o connect to backend~~<br />
+~~-o publish~~ <br />
 
 ## phase four
 -o create behance project for conscript <br />

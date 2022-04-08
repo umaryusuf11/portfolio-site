@@ -552,6 +552,13 @@ $github: #171515;
           
           .link{
             margin-top: 1.5vw;
+            display: none;
+          }
+
+        }
+        .img-container{
+          img{
+            transform: translateX(-4vw) translateY(3vw);
           }
         }
       }

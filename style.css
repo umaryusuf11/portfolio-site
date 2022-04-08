@@ -621,6 +621,11 @@
   }
   #work .project-list .card .header .link {
     margin-top: 1.5vw;
+    display: none;
+  }
+  #work .project-list .card .img-container img {
+    -webkit-transform: translateX(-4vw) translateY(3vw);
+            transform: translateX(-4vw) translateY(3vw);
   }
   #referrals .referral-list {
     margin: 5vw 0;

@@ -1,15 +1,15 @@
 # portfolio-site
 
 # to-do
-## phase one
+## ~~phase one~~
 ~~-o contact form text-area~~ <br />
 ~~-o contact form button~~ <br />
 ~~-o form handling~~ <br />
 ~~-o hero animation~~ <br />
 ~~-o add destinations to links~~ <br />
 
-## phase two
--o optimise for desktop <br />
+## ~~phase two~~
+~~-o optimise for desktop~~ <br />
 
 ## phase three
 -o connect to backend <br />

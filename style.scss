@@ -102,6 +102,7 @@ $github: #171515;
         width: 100vw;
         height: 0;
         overflow: hidden;
+        font-size: 4.5vw;
 
         background-color: white;
         justify-content: center;
@@ -109,19 +110,9 @@ $github: #171515;
 
         gap: 5vw;
 
-        /* for desktop screens */
-        /*                 @media (min-width: 768px){
-                    flex-direction: row;
-                    position: static;
-                    width: auto;
-                    height: auto;
-                    background-color: transparent;
-                    gap: 1em;
-                } */
-
         a {
           color: inherit;
-          font-size: 4.5vw;
+          font-size: inherit;
           font-weight: 400;
         }
       }
@@ -159,9 +150,13 @@ $github: #171515;
       }
       span {
         display: inline-block;
+        position: relative;
+        font-size: 8vw;
+
         span {
+          width: 70vw;
           margin-left: 1vw;
-          font-size: 8vw;
+          font-size: inherit;
           font-weight: bold;
           position: absolute;
           display: block;
@@ -211,7 +206,11 @@ $github: #171515;
 
 #about {
   .container {
+    h1{
+      grid-area: h1;
+    }
     .img-container {
+      grid-area: img;
       display: flex;
       margin-top: 22vw;
 
@@ -233,6 +232,7 @@ $github: #171515;
     }
 
     .text {
+      grid-area: text;
       margin-top: 25vw;
 
       p {
@@ -272,7 +272,6 @@ $github: #171515;
           margin-bottom: 1vw;
 
           .name {
-            font-size: 3.5vw;
             font-weight: 600;
             color: $grey1;
           }
@@ -337,6 +336,7 @@ $github: #171515;
     gap: 10vw;
 
     .card.quote {
+      border-radius: 15px;
       width: 100%;
       height: 72vw;
       mask-image: url("/media/quote_card.svg");
@@ -402,78 +402,212 @@ $github: #171515;
   }
 }
 
-footer {
-  padding: 4vw;
-  background-color: $primary1;
 
-  p {
-    text-align: center;
-    color: #fff;
-    opacity: 0.3;
-  }
-}
+/* For desktop screens half all sizes using vw */
+@media screen and (min-width: 768px) {
+  .nav{
+    height: 7vw;
+    margin: auto;
 
-.alert {
-  position: fixed;
-  width: 90vw;
-  min-height: 15vw;
-  top: 3vw;
-  left: 5vw;
-  display: flex;
-  align-items: center;
-  border: solid 1px $grey1;
-  background-color: white;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  border-radius: 5px;
-  animation: alertIn 0.3s;
+    .container{
+      padding: 0 8vw;
 
-  .status-indicator {
-    flex: 1;
-    align-self: stretch;
-    background-color: $primary1;
-  }
-
-  span {
-    margin: 4vw 2vw;
-    flex: 20;
-    color: $primary1;
-    font-size: 3.5vw;
-  }
-
-  &.success {
-    .status-indicator {
-      background-color: $success;
+      .nav-links{
+        display: flex;
+        font-size: 1.2vw !important;
+        flex-direction: row !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background-color: transparent;
+        gap: 1.5vw !important;
+      }
     }
   }
 
-  &.error {
-    .status-indicator {
-      background-color: $danger;
+  #hero{
+    margin-top: 0;
+    padding: 0 8vw;
+    height: 100vh;
+
+    .container{
+      align-content: center;
+      grid-template-areas: 
+      "text img"
+      "scrollDown scrollDown";
+      ;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2vw;
+      overflow: visible;
+      align-items: center;
+
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: scale-down;
+        transform: translateX(8vw);
+      }
+
+      .text{
+        margin-top: 0;
+        padding: 0;
+
+        h1{
+          font-size: 5vw;
+        }
+
+        span{
+          font-size: 5vw;
+          
+          span{
+            margin-left: .3vw !important;
+            top: 2.5vw;
+          }
+        }
+      }
+
+      .scroll-down{
+        display: flex;
+        width: 100%;
+        margin-top: 15vh;
+
+        .arrow{
+          width: 4vw;
+          height: 4vw;
+          margin: auto;
+        }
+      }
+
     }
   }
 
-  &.warning {
-    .status-indicator {
-      background-color: $warning;
+  #about{
+    .container{
+      display: grid;
+      grid-template-areas: 
+      "h1 h1"
+      "img text"
+      ;
+      grid-template-columns: 1fr 1fr;
+
+      .img-container{
+        margin-top: 5vw;
+        position: relative;
+
+        img{
+          border-radius: 20px;
+          width: 50%;
+          height: auto;
+          transform: translateX(2vw);
+        }
+
+        .panel{
+          border-radius: 20px;
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 60%;
+          height: 30%;
+
+        }
+
+      }
+      .text{
+        margin-top: 15vw;
+        width: fit-content !important;
+        margin-left: auto;
+
+        h1{
+          width: fit-content;
+        }
+
+        p{
+          width: fit-content;
+        }
+      }
     }
   }
 
-  &.info {
-    .status-indicator {
-      background-color: $primary2;
+  #work{
+    .project-list{
+      margin-top: 5vw;
+      gap: 4vw;
+      flex-direction: row;
+
+      .card{
+        padding: 3vw 4vw;
+        height: 50vw;
+        width: 40vw;
+
+        .header{
+          .top{
+            .pill{
+              font-size: 1vw;
+              border-width: .08vw;
+              padding: .5vw 1.5vw;
+            }
+          }
+          
+          .link{
+            margin-top: 1.5vw;
+          }
+        }
+      }
     }
   }
 
-  @keyframes alertIn {
-    /* move from top 0 to top 3vw and opacity 0 to opacity 1 */
-    0% {
-      top: -3vw;
-      opacity: 0;
+  #referrals{
+    .referral-list{
+      margin: 5vw 0;
+      flex-direction: row !important;
+      height: 45vw;
+      gap: 5vw;
+      align-items: flex-end;
+
+      .card.quote{
+        height: 30vw;
+
+        &:first-of-type{
+          align-self: flex-start;
+        }
+
+        .content{
+          .author{
+            margin-top: 2.5vw;
+            gap: .3vw;
+          }
+        }
+      }
     }
-    100% {
-      top: 3vw;
-      opacity: 1;
+  }
+
+  #contact{
+    .container{
+      gap: 20vw;
+      align-items: center;
+      .left{
+        .header{
+          .social-links{
+            margin: 5vw 0;
+          }
+        }
+
+        form{
+          margin-top: 5vw;
+        }
+      }
+
+      .right{
+        display: block;
+        flex: 1;
+        img{
+          width: 100%;
+          height: auto;
+          object-fit: scale-down;
+        }
+      }
     }
   }
 }

@@ -135,7 +135,7 @@
 
 #hero {
   padding: 0;
-  margin-top: 25vw;
+  /*   margin-top: 25vw; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

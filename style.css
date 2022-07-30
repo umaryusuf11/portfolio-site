@@ -355,8 +355,8 @@
 #work .project-list .card .img-container img {
   width: 100%;
   height: auto;
-  -webkit-transform: translateX(-6vw) translateY(8vw);
-          transform: translateX(-6vw) translateY(8vw);
+  -webkit-transform: translateX(0vw) translateY(8vw);
+          transform: translateX(0vw) translateY(8vw);
 }
 
 #work .gh-link {
@@ -624,8 +624,8 @@
     margin-top: 1.5vw;
   }
   #work .project-list .card .img-container img {
-    -webkit-transform: translateX(-4vw) translateY(3vw);
-            transform: translateX(-4vw) translateY(3vw);
+    -webkit-transform: translateX(0vw) translateY(3vw);
+            transform: translateX(0vw) translateY(3vw);
   }
   #referrals .referral-list {
     margin: 5vw 0;

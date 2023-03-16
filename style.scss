@@ -8,6 +8,10 @@ $maintenance: #e87613;
 $maintenance-bg: #e8cfba;
 $github: #171515;
 
+.hide {
+  display: none;
+}
+
 .nav {
   width: 100vw;
   height: 15vw;
@@ -253,8 +257,10 @@ $github: #171515;
     margin-top: 10vw;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 10vw;
     .card {
+      margin: auto;
       padding: 6vw 8vw;
       padding-bottom: 0;
       width: 100%;
@@ -262,6 +268,9 @@ $github: #171515;
       background-color: #f4f6ff;
       border-radius: 15px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       .header {
         .top {
@@ -287,12 +296,17 @@ $github: #171515;
         }
 
         .link {
-          margin-top: 3vw;
-          display: none;
+          margin-top: 3vw;;
           a {
             display: flex;
             align-items: center;
             gap: 1.5vw;
+            
+            p {
+              color: $primary1;
+              text-decoration: underline;
+              text-decoration-style: dashed;
+            }
           }
         }
       }

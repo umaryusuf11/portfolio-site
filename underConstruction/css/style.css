@@ -2,58 +2,36 @@
   height: 100vh;
   margin: auto;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .container img {
   margin: 0 auto;
   width: 50%;
   height: auto;
   max-width: 240px;
 }
-
 .container h1 {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 3em;
 }
-
 .container p {
   margin-top: 0.5em;
   font-size: 1em;
 }
-
 .container .social-links {
   margin: 0 auto;
   margin-top: 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 2em;
 }
-
 .container .social-links .social-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: #001d45;
   color: white;
   width: 2em;
@@ -62,21 +40,15 @@
   line-height: 100%;
   border-radius: 50%;
 }
-
 .container .social-links .social-link.twitter {
   background-color: #1da1f2;
 }
-
 .container .social-links .social-link.github {
   background-color: #333;
 }
-
 .container .social-links .social-link.linkedin {
   background-color: #0077b5;
 }
-
 .container .social-links .social-link:hover {
-  -webkit-filter: contrast(0.7);
-          filter: contrast(0.7);
-}
-/*# sourceMappingURL=style.css.map */
+  filter: contrast(0.7);
+}/*# sourceMappingURL=style.css.map */
